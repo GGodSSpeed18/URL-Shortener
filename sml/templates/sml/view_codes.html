@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITW2-asngmt</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Back home</a>
+    <div class="container">
+        <div class="code-list-view">
+            <ol>
+            {% for encoded in all_codes %}
+            <div style="margin: 1%;">
+                <li>
+                    <div>
+                        Website - <strong>{{ encoded.name }}</strong>
+                    </div>
+                    <div>
+                        URL - {{ encoded.long_url }}
+                    </div>
+                    <div>
+                        encoded: {{ encoded.short_code|safe }}
+                    </div>
+                </li>
+            </div>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    <div>
+    </div>
+</body>
+</html>
